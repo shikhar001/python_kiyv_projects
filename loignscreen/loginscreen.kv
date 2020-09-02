@@ -1,0 +1,75 @@
+#: import utils kivy.utils
+ScreenManager:
+    LoginScreen:
+
+<LoginScreen>:
+    name: 'login'
+    
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            orientation: 'vertical' 
+            canvas.before:
+                Color:
+                    rgba: utils.get_color_from_hex('#800080')
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [0, 0, 40, 40]                
+        BoxLayout:
+            orientation: 'horizontal'
+            padding: [0, 0, 0, 40]
+            Widget:
+                canvas.before:
+                    Color:
+                        rgba: utils.get_color_from_hex('#ADD8E6')
+                    Ellipse:
+                        pos: self.pos
+
+            Widget:
+                canvas.before:
+                    Color:
+                        rgba: utils.get_color_from_hex('#00FFFF')
+                    Ellipse:
+                        pos: self.pos
+            
+            Widget:
+                canvas.before:
+                    Color:
+                        rgba: utils.get_color_from_hex('#008080')
+                    Ellipse:
+                        pos: self.pos
+                        
+    MDCard:
+        id: card 
+        orientation: 'vertical'
+        size_hint: [0.8, 0.7]
+        pos_hint: {'center_x':0.5, 'center_y': 0.6}
+        padding: 20
+        BoxLayout:
+            orientation: 'vertical'
+               
+            MDLabel:
+                text: 'Password Manager'
+                text_size: self.size
+                bold: True
+                font_size: 20 
+                halign: 'center'
+                valign: 'middle'
+
+            MDTextField:
+                hint_text: 'Enter your password'
+                password: True
+                size_hint_x: None 
+                width: 210 
+
+            
+            MDFillRoundFlatButton:
+                text: 'login'
+                pos_hint: {'center_x': 0.5}
+                size_hint_x: 0.6
+
+                    
+
+
+                
